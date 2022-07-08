@@ -4,7 +4,7 @@ call plug#begin()
     Plug 'ryanoasis/vim-devicons'
     
     " Colorscheme
-    Plug 'arcticicestudio/nord-vim'
+    Plug 'ellisonleao/gruvbox.nvim'
 
     " Utilities
     Plug 'sheerun/vim-polyglot'
@@ -16,7 +16,8 @@ call plug#end()
 set path+=**
 
 " colorscheme
-colorscheme nord
+set background="dark"
+colorscheme gruvbox
 
 filetype plugin indent on
 syntax on
