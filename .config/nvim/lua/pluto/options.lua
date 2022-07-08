@@ -20,6 +20,7 @@ local options = {
   splitright = true,
   showtabline = 2,
   syntax = "on",
+  termguicolors = true,
   undofile = true,
   wrap = false,
 }
