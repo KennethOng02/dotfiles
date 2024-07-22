@@ -1,0 +1,6 @@
+{
+  "gruvbox-material": { "branch": "master", "commit": "91f8170a31ae6e31670629cd339df297dbd5fd5f" },
+  "lazy.nvim": { "branch": "main", "commit": "f918318d21956b0874a65ab35ce3d94d9057aabf" },
+  "plenary.nvim": { "branch": "master", "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683" },
+  "vim-tmux-navigator": { "branch": "master", "commit": "5b3c701686fb4e6629c100ed32e827edf8dad01e" }
+}
