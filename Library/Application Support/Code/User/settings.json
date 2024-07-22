@@ -1,0 +1,15 @@
+{
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "editor.fontFamily": "Iosevka Nerd Font",
+  "editor.fontLigatures": true,
+  "workbench.colorTheme": "Gruvbox Material Dark",
+  "editor.formatOnSave": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.fontSize": 15,
+  "terminal.integrated.fontFamily": "Iosevka Nerd Font"
+}
