@@ -38,11 +38,14 @@ brew 'git'
 brew 'neovim'
 brew 'tmux'
 brew 'node'
-cask 'font-fira-code-nerd-font'
+# cask 'font-fira-code-nerd-font'
+cask 'font-iosevka-nerd-font'
 cask 'github'
 cask 'visual-studio-code'
+brew 'java'
 
 # Communication
+cask 'discord'
 mas 'LINE', id: 539883307
 
 # Office and productivity
@@ -63,15 +66,20 @@ vscode "asvetliakov.vscode-neovim"
 # Language
 vscode "ms-vscode.cpptools"
 vscode "ms-python.python"
+vscode "vscjava.vscode-java-pack"
 
 # Markdown tools
 vscode "shd101wyy.markdown-preview-enhanced"
 
 # Theme
-vscode "arcticicestudio.nord-visual-studio-code"
+# vscode "arcticicestudio.nord-visual-studio-code"
+vscode "sainnhe.gruvbox-material"
 
 # Code formater/beautifier
 vscode "esbenp.prettier-vscode"
 
 # Docker
 vscode "ms-azuretools.vscode-docker"
+
+# React
+vscode "dbaeumer.vscode-eslint"
