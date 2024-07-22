@@ -1,0 +1,7 @@
+#!/bin/bash
+
+brew update
+brew upgrade
+brew autoremove
+brew cleanup --prune=all
+rm -rf /Library/Caches/Homebrew/*

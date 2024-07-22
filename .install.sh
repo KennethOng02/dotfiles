@@ -9,12 +9,14 @@ xcode-select —-install
 if test ! $(which brew); then
     echo "Installing homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/kenneth/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 brew update
 
 echo "Installing most applications with Homebrew and Mac App Store CLI"
-brew bundle
+brew bundle --global
 
 # Alacritty
 mkdir -p ~/.config/alacritty/themes
@@ -30,5 +32,4 @@ defaults write com.apple.dock tilesize -integer 35 && killall Dock
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 echo "Cleaning..."
-brew cleanup
-rm -rf /Library/Caches/Homebrew/*
+~/.cleanup
