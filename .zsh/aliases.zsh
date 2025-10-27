@@ -1,0 +1,6 @@
+alias v="nvim"
+alias vim="nvim"
+alias ls="eza"
+alias la="eza -la"
+alias ll="eza -l"
+alias sourcerc="source ~/.zshrc"
