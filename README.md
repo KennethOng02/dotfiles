@@ -37,7 +37,7 @@ sudo dnf install -y stow git
 Clone the dotfiles repo into your home directory to maintain correct relative paths.
 
 ```bash
-git clone https://github.com/<your-username>/dotfiles.git ~/.dotfiles
+git clone https://github.com/KennethOng02/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 ```
 
