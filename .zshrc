@@ -26,5 +26,6 @@ export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
     source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Shell completions
+eval "$(zoxide init zsh)"
 eval "$(uv generate-shell-completion zsh)"
 eval "$(pyenv init - zsh)"

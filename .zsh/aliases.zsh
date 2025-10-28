@@ -1,5 +1,6 @@
 alias v="nvim"
 alias vim="nvim"
+alias cd="z"
 alias ls="eza"
 alias la="eza -la"
 alias ll="eza -l"
