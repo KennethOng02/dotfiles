@@ -12,6 +12,14 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 # Add active Node version to PATH if NVM is loaded
 export PATH="$NVM_DIR/versions/node/$(nvm version 2>/dev/null || echo "none")/bin:$PATH"
 
-# Pyenv path
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
+
 export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init --path)"
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
+
+export PATH="/usr/local/opt/mysql@8.0/bin:$PATH"

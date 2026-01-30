@@ -1,9 +1,4 @@
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="josh"
-plugins=(git)
-
-# Load Oh-My-Zsh
-source $ZSH/oh-my-zsh.sh
+plugins=(git vi-mode)
 
 # Locale
 export LANG=en_US.UTF-8
@@ -28,4 +23,4 @@ export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
 # Shell completions
 eval "$(zoxide init zsh)"
 eval "$(uv generate-shell-completion zsh)"
-eval "$(pyenv init - zsh)"
+eval "$(starship init zsh)"
