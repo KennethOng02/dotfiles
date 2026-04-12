@@ -1,5 +1,2 @@
-theme = Catppuccin Mocha
+theme = Gruvbox Material Dark
 font-family = "JetBrainsMono Nerd Font Mono"
-font-size = 16
-mouse-hide-while-typing = true
-macos-option-as-alt = true

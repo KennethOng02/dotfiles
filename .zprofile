@@ -23,3 +23,5 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 export PATH="/usr/local/opt/mysql@8.0/bin:$PATH"
+
+export PATH="$HOME/.local/bin:$PATH"
