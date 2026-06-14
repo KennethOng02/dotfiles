@@ -787,6 +787,7 @@ do
   vim.list_extend(ensure_installed, {
     'prettierd',
     'eslint_d',
+    'jdtls', -- Java LSP (nvim-jdtls)
   })
 
   require('mason-tool-installer').setup { ensure_installed = ensure_installed }
@@ -931,7 +932,7 @@ do
   vim.pack.add { { src = gh 'nvim-treesitter/nvim-treesitter', version = 'main' } }
 
   -- Ensure basic parsers are installed
-  local parsers = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' }
+  local parsers = { 'bash', 'c', 'diff', 'html', 'java', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' }
   require('nvim-treesitter').install(parsers)
 
   ---@param buf integer
