@@ -13,9 +13,10 @@ config.initial_rows = 28
 config.use_fancy_tab_bar = false
 
 -- or, changing the font size and color scheme.
-config.font_size = 16
+config.font_size = 14
 config.color_scheme = 'Dracula (Official)'
 config.font = wezterm.font('JetBrains Mono')
+config.window_decorations = "RESIZE"
 
 -- Finally, return the configuration to wezterm:
 return config
