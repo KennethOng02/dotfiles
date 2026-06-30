@@ -720,7 +720,23 @@ do
   local servers = {
     -- clangd = {},
     -- gopls = {},
-    pyright = {},
+    pyright = {
+      settings = {
+        python = {
+          analysis = {
+            typeCheckingMode = 'off',
+          },
+        },
+      },
+      on_new_config = function(config, root_dir)
+        local venv = root_dir .. '/.venv/bin/python'
+        if vim.fn.executable(venv) == 1 then
+          config.settings = config.settings or {}
+          config.settings.python = config.settings.python or {}
+          config.settings.python.pythonPath = venv
+        end
+      end,
+    },
     -- rusit_analyzer = {},
     --
     -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -728,6 +744,8 @@ do
     --
     -- But for many setups, the LSP (`ts_ls`) will work just fine
     ts_ls = {},
+
+    astro = {},
 
     stylua = {}, -- Used to format Lua code
 
@@ -808,15 +826,9 @@ do
   require('conform').setup {
     notify_on_error = false,
     format_on_save = function(bufnr)
-      -- You can specify filetypes to autoformat on save here:
-      local enabled_filetypes = {
-        -- lua = true,
-        -- python = true,
-      }
-      if enabled_filetypes[vim.bo[bufnr].filetype] then
+      local prettier_fts = { astro = true, javascript = true, typescript = true, typescriptreact = true, css = true, html = true, json = true }
+      if prettier_fts[vim.bo[bufnr].filetype] then
         return { timeout_ms = 500 }
-      else
-        return nil
       end
     end,
     default_format_opts = {
@@ -830,6 +842,13 @@ do
       --
       -- You can use 'stop_after_first' to run the first available formatter from the list
       -- javascript = { "prettierd", "prettier", stop_after_first = true },
+      astro = { 'prettierd', 'prettier', stop_after_first = true },
+      javascript = { 'prettierd', 'prettier', stop_after_first = true },
+      typescript = { 'prettierd', 'prettier', stop_after_first = true },
+      typescriptreact = { 'prettierd', 'prettier', stop_after_first = true },
+      css = { 'prettierd', 'prettier', stop_after_first = true },
+      html = { 'prettierd', 'prettier', stop_after_first = true },
+      json = { 'prettierd', 'prettier', stop_after_first = true },
     },
   }
 
@@ -932,7 +951,7 @@ do
   vim.pack.add { { src = gh 'nvim-treesitter/nvim-treesitter', version = 'main' } }
 
   -- Ensure basic parsers are installed
-  local parsers = { 'bash', 'c', 'diff', 'html', 'java', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' }
+  local parsers = { 'astro', 'bash', 'c', 'diff', 'html', 'java', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' }
   require('nvim-treesitter').install(parsers)
 
   ---@param buf integer
